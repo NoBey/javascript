@@ -212,7 +212,7 @@
 
 ## Spacing
 
-  - Always include a single space in your self-closing tag. eslint: [`no-multi-spaces`](http://eslint.org/docs/rules/no-multi-spaces), [`react/jsx-space-before-closing`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-space-before-closing.md)
+  - Always include a single space in your self-closing tag. eslint: [`no-multi-spaces`](http://eslint.org/docs/rules/no-multi-spaces), [`react/jsx-tag-spacing`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-tag-spacing.md)
 
     ```jsx
     // bad
@@ -271,7 +271,7 @@
     />
     ```
 
-  - Always include an `alt` prop on `<img>` tags. If the image is presentational, `alt` can be an empty string or the `<img>` must have `role="presentation"`. eslint: [`jsx-a11y/img-has-alt`](https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/img-has-alt.md)
+  - Always include an `alt` prop on `<img>` tags. If the image is presentational, `alt` can be an empty string or the `<img>` must have `role="presentation"`. eslint: [`jsx-a11y/alt-text`](https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/alt-text.md)
 
     ```jsx
     // bad
@@ -360,8 +360,8 @@
   };
 
   // good
-  function SFC({ foo, bar }) {
-    return <div>{foo}{bar}</div>;
+  function SFC({ foo, bar, children }) {
+    return <div>{foo}{bar}{children}</div>;
   }
   SFC.propTypes = {
     foo: PropTypes.number.isRequired,
@@ -476,7 +476,7 @@
       }
 
       render() {
-        return <div onClick={this.onClickDiv.bind(this)} />
+        return <div onClick={this.onClickDiv.bind(this)} />;
       }
     }
 
@@ -493,7 +493,7 @@
       }
 
       render() {
-        return <div onClick={this.onClickDiv} />
+        return <div onClick={this.onClickDiv} />;
       }
     }
     ```
@@ -575,7 +575,7 @@
       }
 
       render() {
-        return <a href={this.props.url} data-id={this.props.id}>{this.props.text}</a>
+        return <a href={this.props.url} data-id={this.props.id}>{this.props.text}</a>;
       }
     }
 
